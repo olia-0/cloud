@@ -1,6 +1,20 @@
+#services:
+#  - type: web
+#    name: book-api
+#    env: python
+#    buildCommand: ""
+#    startCommand: "python app.py"
 services:
   - type: web
     name: book-api
     env: python
     buildCommand: ""
     startCommand: "python app.py"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bookdb # <- назва твоєї бази на Render
+          property: postgresql://bookdb_ezmr_user:BP6jv4O2nkGjXGf1d9uk9ts6CexiCpCM@dpg-d05rss95pdvs73eltun0-a.frankfurt-postgres.render.com/bookdb_ezmr
+#    envVars:
+#      - key: DATABASE_URL
+#        value: postgresql://bookdb_ezmr_user:BP6jv4O2nkGjXGf1d9uk9ts6CexiCpCM@dpg-d05rss95pdvs73eltun0-a.frankfurt-postgres.render.com/bookdb_ezmr
