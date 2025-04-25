@@ -37,7 +37,7 @@ def delete_book(book_id):
 # Привітання (перевірка сервісу)
 @app.route("/")
 def hello():
-    return "Hello from Python CRUD App on Render!"
+    return "Hello from Python CRUD App on Render! -------"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
